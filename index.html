@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #87CEEB, #7FFFD4);
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Start your webcam if your face is detected!</h1>
+        <div class="text-center mb-3">
+            <button class="btn btn-primary mr-2" onclick="startWebcam()">Start Webcam</button>
+            <button class="btn btn-danger" onclick="stopWebcam()">Stop Webcam</button>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <video id="video" autoplay class="w-100"></video>
+                <canvas id="canvas" width="540" height="440"></canvas>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-6">
+                <p id="message" class="text-center"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
+    <!-- Load TensorFlow.js Face API -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+    <!-- Load script.js -->
+    <script src="tensorface.js"></script>
+</body>
+</html>
